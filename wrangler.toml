@@ -1,0 +1,25 @@
+name = "telegram-bot-maker"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[dev]
+ip = "0.0.0.0"
+port = 3000
+
+# Cloudflare D1 Database Binding
+# Set your Cloudflare D1 database_id below or bind DB in Cloudflare Dashboard -> Workers & Pages -> Settings -> Bindings
+[[d1_databases]]
+binding = "DB"
+database_name = "telegram_bot_db"
+database_id = "da6c1909-bb22-4ca8-9c76-3a1fbe7343d6"
+
+# Optional non-secret defaults (can also be overridden in Cloudflare Dashboard -> Variables and Secrets)
+# [vars]
+# DEFAULT_DAILY_COINS = "2"
+# DEFAULT_BOT_COST = "5"
+# DEFAULT_MASTER_REF_COINS = "1"
+#
+# Required Secrets / Variables to configure in Cloudflare Dashboard (Settings -> Variables and Secrets):
+# - BOT_TOKEN       : Telegram Master Bot token from @BotFather
+# - ADMIN_ID        : Primary Admin Telegram numeric User ID (or comma-separated IDs)
+# - WEBHOOK_SECRET  : Webhook secret string (A-Z, a-z, 0-9, _, -) for verifying Telegram webhooks & /setup
